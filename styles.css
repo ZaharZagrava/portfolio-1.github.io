@@ -1,0 +1,125 @@
+/* Site Sections */
+.site {
+  width: 100%;
+}
+
+.header {
+  display: grid;
+  background: #0088CC;
+  padding: 1rem;
+}
+
+.main {
+  display: grid;
+  grid-gap: 2rem 0rem;
+}
+
+.main > div {
+  display: grid;
+  grid-template-columns: fit-content(72rem);
+  padding: 2rem;
+  place-content: center;
+  place-items: center;
+}
+
+.footer {
+  display: grid;
+  place-items: center;
+  background: #3F3F3F;
+  color: aliceblue;
+}
+
+/* Main --> Profile */
+.profile {
+  grid-row-gap: 0.5rem;
+  background: #F5F8FA;
+}
+
+.image_container {
+  width: 10rem;
+  height: 10rem;
+}
+
+.my_image {
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+  border-radius: 50%;
+  border: 0.4rem solid #5D5E60;
+}
+
+.profile > h1 {
+  font-size: 1.5rem;
+}
+
+/* Main --> About Me */
+.about_me {
+  display: grid;
+  text-align: center;
+}
+
+/* Main --> Skills */
+.skills {
+  background: #F5F8FA;
+}
+
+.tag_container {
+  display: flex;
+}
+
+.tag_container .tag {
+  border: 2px solid #ccc;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+/* Main --> Portfolio */
+.portfolio {
+  text-align: center;
+}
+
+.portfolio_container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-row-gap: 1rem;
+}
+
+@media all and (max-width: 1000px) {
+  .portfolio_container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 1rem;
+  }
+}
+
+/* Header */
+.header .text {
+  color: aliceblue;
+  font-size: 1.3rem;
+}
+
+/* Education */
+.education {
+  background: #F5F8FA;
+}
+
+/* Universal */
+.contacts_list {
+  width: 15rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  place-items: center;
+  grid-gap: 0.3rem;
+  margin: 0.5rem;
+  padding: 0;
+}
+
+.contacts_list img {
+  width: 2.0rem;
+}
+
+p {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
