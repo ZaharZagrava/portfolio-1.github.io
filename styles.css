@@ -17,6 +17,7 @@
 .main > div {
   display: grid;
   grid-template-columns: fit-content(72rem);
+  grid-row-gap: 1rem;
   padding: 2rem;
   place-content: center;
   place-items: center;
@@ -24,9 +25,19 @@
 
 .footer {
   display: grid;
+  grid-template-columns: fit-content(72rem);
+  grid-row-gap: 1rem;
+  padding: 2rem;
+  place-content: center;
   place-items: center;
   background: #3F3F3F;
   color: aliceblue;
+}
+
+/* Header */
+.header .text {
+  color: aliceblue;
+  font-size: 1.3rem;
 }
 
 /* Main --> Profile */
@@ -65,6 +76,9 @@
 
 .tag_container {
   display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
 }
 
 .tag_container .tag {
@@ -93,14 +107,9 @@
   }
 }
 
-/* Header */
-.header .text {
-  color: aliceblue;
-  font-size: 1.3rem;
-}
-
 /* Education */
 .education {
+  text-align: center;
   background: #F5F8FA;
 }
 
@@ -120,6 +129,27 @@
 }
 
 p {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Scrollbar */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #3F3F3F; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #0088CC; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #0199e6; 
 }
