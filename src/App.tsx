@@ -20,6 +20,7 @@ import {
   GithubIcon,
   TwitterIcon,
 } from "./icons";
+import { Overlay } from "./components/Overlay/Overlay";
 
 const Root = styled(animated.div)`
   min-height: 100vh;
@@ -160,17 +161,6 @@ const Footer = styled.main`
 const FooterNonLastLink = styled.a`
   margin-right: 10px;
 `;
-
-const Overlay = styled.div`
-  background-color: rgba(255, 255, 255);
-  position: fixed;
-
-  top: 0;
-  left: 0;
-
-  width: 100vw;
-  height: 100vh;
-`
 
 const positions = {
   fullStackDev: DateTime.now().set({ year: 2020, month: 10 }),
@@ -588,8 +578,7 @@ function App() {
             I like vagabonding around the city with no idea where I am going to
             relax and reset after a whole day of coding, exploring new places;
             watching movies, tv shows (Love, death &amp; robots, Game of Thrones,
-            Stranger Things); daydreaming, especially after a good movie, when
-            your fantasy is still 'in that world'.
+            Stranger Things), and... yeah, that's pretty much it :)
           </Paragraph>
           <Hr />
           <Footer>
