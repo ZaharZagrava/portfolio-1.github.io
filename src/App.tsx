@@ -587,7 +587,7 @@ function App() {
           <Paragraph>
             I like vagabonding around the city with no idea where I am going to
             relax and reset after a whole day of coding, exploring new places;
-            watching movies, tv shows (Love, death & robots, Game of Thrones,
+            watching movies, tv shows (Love, death &amp; robots, Game of Thrones,
             Stranger Things); daydreaming, especially after a good movie, when
             your fantasy is still 'in that world'.
           </Paragraph>
