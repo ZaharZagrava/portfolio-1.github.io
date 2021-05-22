@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { DateTime } from "luxon";
 
 import myAvatar from "./images/avatar.jpg";
-import { animated, useSpring } from "react-spring";
+import { animated } from "react-spring";
 
 import cs50certificate from "./images/cs50-certificate.png";
 
@@ -160,6 +160,17 @@ const Footer = styled.main`
 const FooterNonLastLink = styled.a`
   margin-right: 10px;
 `;
+
+const Overlay = styled.div`
+  background-color: rgba(255, 255, 255);
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100vw;
+  height: 100vh;
+`
 
 const positions = {
   fullStackDev: DateTime.now().set({ year: 2020, month: 10 }),
@@ -374,22 +385,15 @@ const courses = [
 
 function App() {
   const [isCS50Shown, setisCS50Shown] = useState<boolean>(false);
-
-  const props = useSpring({
-    opacity: 1,
-    from: { opacity: 0 },
-    delay: 0.3,
-    config: {
-      duration: 500,
-    },
-  });
+  const [isLoaded, setIsLoaded] = useState<boolean>(false);
 
   return (
-    <Root style={props}>
+    <Root>
+      {!isLoaded && <Overlay /> }
       <AppContainer>
         <Header className="header">
           <H1Header>RUSLAN PLASTUN</H1Header>
-          <Avatar />
+          <Avatar onLoad={() => setIsLoaded(true)} />
         </Header>
         <Main>
           <H2Header>Experience</H2Header>
@@ -581,7 +585,11 @@ function App() {
           </List>
           <H2Header>About Me</H2Header>
           <Paragraph>
-            I like vagabonding around the city with no idea where I am going to relax and reset after a whole day of coding, exploring new places; watching movies, tv shows (Love, death & robots, Game of Thrones, Stranger Things); daydreaming, especially after a good movie, when your fantasy is still 'in that world'.
+            I like vagabonding around the city with no idea where I am going to
+            relax and reset after a whole day of coding, exploring new places;
+            watching movies, tv shows (Love, death & robots, Game of Thrones,
+            Stranger Things); daydreaming, especially after a good movie, when
+            your fantasy is still 'in that world'.
           </Paragraph>
           <Hr />
           <Footer>
@@ -639,8 +647,8 @@ function App() {
           />
         </FullScreenContainer>
       )}
-    </Root>
-  );
+    </Root>)
+
 }
 
 export default App;
