@@ -1,8 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+
+// import "./util/reset.css";
+import "./util/global.scss";
+import "./util/reset.scss";
 
 import firebase from 'firebase';
 

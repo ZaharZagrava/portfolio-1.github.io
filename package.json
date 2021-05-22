@@ -13,6 +13,7 @@
     "@types/react-dom": "^17.0.0",
     "firebase": "8.4.3",
     "luxon": "1.26.0",
+    "node-sass": "4.14.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
@@ -25,7 +26,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "login": "firebase login",
+    "deploy": "firebase deploy --only hosting"
   },
   "eslintConfig": {
     "extends": [
@@ -47,6 +50,7 @@
   },
   "devDependencies": {
     "@types/luxon": "1.26.5",
-    "@types/styled-components": "5.1.9"
+    "@types/styled-components": "5.1.9",
+    "firebase-tools": "9.11.0"
   }
 }
