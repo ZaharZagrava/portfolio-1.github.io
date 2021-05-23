@@ -8,6 +8,8 @@ import { animated } from "react-spring";
 
 import cs50certificate from "./images/cs50-certificate.png";
 
+import StackoverflowImage from './icons/stackoverflow.jpg'
+
 import { getYearDiff } from "./util/util";
 
 import styles from "./App.module.scss";
@@ -15,7 +17,6 @@ import styles from "./App.module.scss";
 import {
   FacebookIcon,
   LinkedInIcon,
-  StackoverflowIcon,
   EmailIcon,
   GithubIcon,
   TwitterIcon,
@@ -220,7 +221,7 @@ const exp = {
       },
       personally: {
         from: DateTime.now().set({
-          year: 2017,
+          year: 2018,
           month: 9,
         }),
       },
@@ -449,6 +450,35 @@ function App() {
               total
             </ListItem>
           </List>
+          <H2Header>Frameworks</H2Header>
+          <List>
+            <ListItem>
+              Node.js -{" "}
+              {`${getYearDiff(
+                exp.frameworks.nodejs.professionally.from,
+                DateTime.now()
+              )}`}{" "}
+              professional experience,{" "}
+              {`${getYearDiff(
+                exp.frameworks.nodejs.personally.from,
+                DateTime.now()
+              )}`}{" "}
+              total
+            </ListItem>
+            <ListItem>
+              React.js -{" "}
+              {`${getYearDiff(
+                exp.frameworks.react.professionally.from,
+                DateTime.now()
+              )}`}{" "}
+              professional experience,{" "}
+              {`${getYearDiff(
+                exp.frameworks.react.personally.from,
+                DateTime.now()
+              )}`}{" "}
+              total
+            </ListItem>
+          </List>
           <H2Header>Storage systems</H2Header>
           <List>
             <ListItem>
@@ -526,7 +556,7 @@ function App() {
               professional experience
             </ListItem>
           </List>
-          <H2Header>Technologies</H2Header>
+          <H2Header>Other technologies</H2Header>
           <List>
             <ListItem>Elasticsearch</ListItem>
             <ListItem>redux, redux-saga, immer</ListItem>
@@ -601,7 +631,7 @@ function App() {
               rel="noopener noreferrer"
               href="https://stackoverflow.com/users/7735423/zahar-zagrava?tab=profile"
             >
-              <StackoverflowIcon className={styles.icon} />
+              <img src={StackoverflowImage} alt="Stackoverflow" className={styles.stackoverflow_icon}  />
             </FooterNonLastLink>
             <FooterNonLastLink
               target="_blank"
