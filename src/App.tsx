@@ -275,8 +275,8 @@ const exp = {
     graphql: {
       professionally: {
         from: DateTime.now().set({
-          year: 2020,
-          month: 10,
+          year: 2021,
+          month: 4,
         }),
       },
       personally: {
@@ -556,6 +556,13 @@ function App() {
               professional experience
             </ListItem>
           </List>
+          <H2Header>Features</H2Header>
+          <List>
+            <ListItem>Implemented GraphQL server with Typescript, using type-graphql</ListItem>
+            <ListItem>Familiar with GraphQL potential performance problems (n+1 problem), and ways to fix them</ListItem>
+            <ListItem>Created scalable AWS infrastructure with AWS Cloudformation</ListItem>
+            <ListItem>Refactored api codebase of one of my projects, using <b>twice as little</b> code as was before (not only preserving but increasing maintainability, and preserving performance of the project)</ListItem>
+          </List>
           <H2Header>Other technologies</H2Header>
           <List>
             <ListItem>Elasticsearch</ListItem>
@@ -603,6 +610,10 @@ function App() {
               </LinkButton>
             </ListItem>
           </List>
+          <H2Header>Education</H2Header>
+          <Paragraph>
+            State Higher Educational Institution Banking University Cherkasy Institute (2018 - 2022)
+          </Paragraph>
           <H2Header>About Me</H2Header>
           <Paragraph>
             I like vagabonding around the city with no idea where I am going to

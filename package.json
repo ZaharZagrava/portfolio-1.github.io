@@ -28,7 +28,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "login": "firebase login",
-    "deploy": "firebase deploy --only hosting"
+    "deploy": "firebase deploy --only hosting",
+    "new-release": "yarn run build && yarn run deploy"
   },
   "eslintConfig": {
     "extends": [
