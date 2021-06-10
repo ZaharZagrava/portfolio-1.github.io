@@ -331,7 +331,7 @@ const projects = [
   {
     name: "Meetmeinthebar",
     link: "https://meetmeinthe.bar",
-    description: "as full stack developer, recently as a tech lead as well",
+    description: "as a full stack developer, recently as a tech lead as well",
     workingOn: true,
   },
   {
@@ -463,7 +463,7 @@ function App() {
                 exp.frameworks.nodejs.personally.from,
                 DateTime.now()
               )}`}{" "}
-              total
+              total (it is a runtime, but acts as a framework as well)
             </ListItem>
             <ListItem>
               React.js -{" "}
@@ -605,8 +605,8 @@ function App() {
           </List>
           <H2Header>About Me</H2Header>
           <Paragraph>
-            I like vagabonding around the city with no idea where I am going to
-            relax and reset after a whole day of coding, exploring new places;
+            I like rambling around the city to
+            relax and reset after work, exploring new places;
             watching movies, tv shows (Love, death &amp; robots, Game of Thrones,
             Stranger Things), and... yeah, that's pretty much it :)
           </Paragraph>
