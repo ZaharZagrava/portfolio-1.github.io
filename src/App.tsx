@@ -275,8 +275,8 @@ const exp = {
     graphql: {
       professionally: {
         from: DateTime.now().set({
-          year: 2020,
-          month: 10,
+          year: 2021,
+          month: 4,
         }),
       },
       personally: {
@@ -556,13 +556,23 @@ function App() {
               professional experience
             </ListItem>
           </List>
+          <H2Header>Features</H2Header>
+          <List>
+            <ListItem>Implemented GraphQL server with Typescript, using type-graphql</ListItem>
+            <ListItem>Familiar with GraphQL potential performance problems (n+1 problem), and ways to fix them</ListItem>
+            <ListItem>Created scalable AWS infrastructure with AWS Cloudformation</ListItem>
+            <ListItem>Refactored api codebase of one of my projects, using <b>twice as little</b> code as was before (not only preserving but increasing maintainability, and preserving performance of the project)</ListItem>
+            <ListItem>Had professional experience communicating directly with Enligsh-speaking clients, helping them sometimes with product design, </ListItem>
+            <ListItem>Had experience in writing unit / integration tests for react / react-native using jest, react-testing-library</ListItem>
+          </List>
           <H2Header>Other technologies</H2Header>
           <List>
             <ListItem>Elasticsearch</ListItem>
-            <ListItem>redux, redux-saga, immer</ListItem>
+            <ListItem>Storybook (only personal experience)</ListItem>
+            <ListItem>redux, redux-saga, immer, @reduxjs/toolkit</ListItem>
             <ListItem>type-graphql</ListItem>
             <ListItem>knex</ListItem>
-            <ListItem>styled-components</ListItem>
+            <ListItem>styled-componentsk (only personal experience)</ListItem>
             <ListItem>luxon, moment, lodash</ListItem>
             <ListItem>yup</ListItem>
             <ListItem>formik</ListItem>
@@ -570,6 +580,14 @@ function App() {
             <ListItem>prettier, eslint, typedoc</ListItem>
             <ListItem>SASS</ListItem>
             <ListItem>Material UI</ListItem>
+            <ListItem>Bootstrap</ListItem>
+            <ListItem>HTML (duh...)</ListItem>
+          </List>
+          <H2Header>Languages</H2Header>
+          <List>
+            <ListItem>English - B2 (had professional exprience of interacting with english-speaking clients)</ListItem>
+            <ListItem>Ukrainian - native</ListItem>
+            <ListItem>Russian - proficient</ListItem>
           </List>
           <H2Header>Books</H2Header>
           <List>
@@ -603,6 +621,10 @@ function App() {
               </LinkButton>
             </ListItem>
           </List>
+          <H2Header>Education</H2Header>
+          <Paragraph>
+            State Higher Educational Institution Banking University Cherkasy Institute (2018 - 2022)
+          </Paragraph>
           <H2Header>About Me</H2Header>
           <Paragraph>
             I like rambling around the city to
