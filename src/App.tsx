@@ -562,7 +562,7 @@ function App() {
             <ListItem>Familiar with GraphQL potential performance problems (n+1 problem), and ways to fix them</ListItem>
             <ListItem>Created scalable AWS infrastructure with AWS Cloudformation</ListItem>
             <ListItem>Refactored api codebase of one of my projects, using <b>twice as little</b> code as was before (not only preserving but increasing maintainability, and preserving performance of the project)</ListItem>
-            <ListItem>Had professional experience communicating directly with Enligsh-speaking clients, helping them sometimes with product design, </ListItem>
+            <ListItem>Had professional experience communicating directly with Enligsh-speaking clients, sometimes helping them with product design</ListItem>
             <ListItem>Had experience in writing unit / integration tests for react / react-native using jest, react-testing-library</ListItem>
           </List>
           <H2Header>Other technologies</H2Header>
@@ -585,7 +585,11 @@ function App() {
           </List>
           <H2Header>Languages</H2Header>
           <List>
-            <ListItem>English - B2 (had professional exprience of interacting with english-speaking clients)</ListItem>
+            <ListItem>English - B2</ListItem>
+                <List>
+                  <ListItem>B2 level was tested and verified, it's not my estimate</ListItem>
+                  <ListItem>Had professional exprience of interacting with english-speaking clients</ListItem>
+                </List>
             <ListItem>Ukrainian - native</ListItem>
             <ListItem>Russian - proficient</ListItem>
           </List>
@@ -620,6 +624,14 @@ function App() {
                 {courses[2].name}
               </LinkButton>
             </ListItem>
+          </List>
+          <H2Header>Work rules</H2Header>
+          <List>
+            <ListItem>Start working at 8 AM</ListItem>
+            <ListItem>Have a stand-up desk, that increases productivity for around 20% (rough estimate)</ListItem>
+            <ListItem>Track my work time</ListItem>
+            <ListItem>Use pomodoro (50 min of working / 6 minutes of relax)</ListItem>
+            <ListItem>Work in a quiet environment with no distractions</ListItem>
           </List>
           <H2Header>Education</H2Header>
           <Paragraph>
