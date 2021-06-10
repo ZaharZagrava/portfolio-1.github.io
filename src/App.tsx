@@ -572,7 +572,7 @@ function App() {
             <ListItem>redux, redux-saga, immer, @reduxjs/toolkit</ListItem>
             <ListItem>type-graphql</ListItem>
             <ListItem>knex</ListItem>
-            <ListItem>styled-componentsk (only personal experience)</ListItem>
+            <ListItem>styled-components (only personal experience)</ListItem>
             <ListItem>luxon, moment, lodash</ListItem>
             <ListItem>yup</ListItem>
             <ListItem>formik</ListItem>
@@ -587,7 +587,7 @@ function App() {
           <List>
             <ListItem>English - B2</ListItem>
                 <List>
-                  <ListItem>B2 level was tested and verified, it's not my estimate</ListItem>
+                  <ListItem>B2 level was tested and verified, it's not just my estimate</ListItem>
                   <ListItem>Had professional exprience of interacting with english-speaking clients</ListItem>
                 </List>
             <ListItem>Ukrainian - native</ListItem>
