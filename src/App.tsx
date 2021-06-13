@@ -628,8 +628,7 @@ function App() {
           <H2Header>Work rules</H2Header>
           <List>
             <ListItem>Start working at 8 AM</ListItem>
-            <ListItem>Have a stand-up desk, that increases productivity for around 20% (rough estimate)</ListItem>
-            <ListItem>Track my work time</ListItem>
+            <ListItem>Use a stand-up desk</ListItem>
             <ListItem>Use pomodoro (50 min of working / 6 minutes of relax)</ListItem>
             <ListItem>Work in a quiet environment with no distractions</ListItem>
           </List>
