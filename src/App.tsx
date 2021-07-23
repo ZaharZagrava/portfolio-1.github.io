@@ -1,27 +1,21 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import styled from "styled-components";
-import { DateTime } from "luxon";
+import styled from 'styled-components';
+import { DateTime } from 'luxon';
 
-import myAvatar from "./images/avatar.jpg";
-import { animated } from "react-spring";
+import myAvatar from './images/avatar.jpg';
+import { animated } from 'react-spring';
 
-import cs50certificate from "./images/cs50-certificate.png";
+import cs50certificate from './images/cs50-certificate.png';
 
-import StackoverflowImage from './icons/stackoverflow.jpg'
+import StackoverflowImage from './icons/stackoverflow.jpg';
 
-import { getYearDiff } from "./util/util";
+import { getYearDiff } from './util/util';
 
-import styles from "./App.module.scss";
+import styles from './App.module.scss';
 
-import {
-  FacebookIcon,
-  LinkedInIcon,
-  EmailIcon,
-  GithubIcon,
-  TwitterIcon,
-} from "./icons";
-import { Overlay } from "./components/Overlay/Overlay";
+import { FacebookIcon, LinkedInIcon, EmailIcon, GithubIcon, TwitterIcon } from './icons';
+import { Overlay } from './components/Overlay/Overlay';
 
 const Root = styled(animated.div)`
   min-height: 100vh;
@@ -35,8 +29,7 @@ const Root = styled(animated.div)`
 const AppContainer = styled.div`
   width: 100%;
 
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   font-weight: 300;
   font-size: 14px;
   line-height: 140%;
@@ -97,7 +90,7 @@ const Main = styled.main``;
 
 const Avatar = styled.img.attrs({
   src: myAvatar,
-  alt: "My Avatar",
+  alt: 'My Avatar',
 })`
   width: 300px;
   height: 300px;
@@ -107,7 +100,7 @@ const Avatar = styled.img.attrs({
 `;
 
 const List = styled.ul`
-  list-style-type: "-  ";
+  list-style-type: '-  ';
 
   padding-inline-start: 15px;
 
@@ -132,6 +125,14 @@ const H2Header = styled.h2`
   font-weight: 300;
   font-size: 24px;
 `;
+
+const QuoteHeader = styled.p`
+  font-style: italic;
+  font-weight: 300;
+  font-size: 18px;
+
+  text-align: center;
+`
 
 const ListItem = styled.li``;
 
@@ -161,6 +162,23 @@ const Footer = styled.main`
 
 const FooterNonLastLink = styled.a`
   margin-right: 10px;
+`;
+
+const FromToDate = styled.span`
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-weight: 300;
+  font-size: 10px;
+`;
+
+const FlexList = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;
+
+const FlexListItem = styled.div`
+  border: 1px solid #a9a9a9;
+  margin: 5px;
+  padding: 5px;
 `;
 
 const positions = {
@@ -329,44 +347,27 @@ const exp = {
 
 const projects = [
   {
-    name: "Meetmeinthebar",
-    link: "https://meetmeinthe.bar",
-    description: "as a full stack developer, recently as a tech lead as well",
-    workingOn: true,
+    name: 'LiveWell Home',
+    link: 'https://mylivewellhome.com/navigation-space/dashboard',
+    description: 'as a single developer for the project',
   },
   {
-    name: "LiveWell Home",
-    link: "http://mylivewellhome.com",
-    description: "as a single developer for the project",
-    workingOn: true,
-  },
-  {
-    name: "Knowledge Base",
-    link: "https://portfolio-project-2-f7d94.web.app/",
-    description:
-      "my first, very simple project in React before I got my first job.",
-  },
-  {
-    name: "Zigravio",
-    link: "https://bitbucket.org/zagrava/zigravio/src/master/",
-    description:
-      "is the real-time 2d shooter browser game, that I was working on in school. Only node.js and socket.io basically, no other frameworks.",
-  },
+    name: 'Meetmeinthebar',
+    link: 'https://meetmeinthe.bar',
+    description: 'as a full stack developer, recently as a tech lead as well',
+  }
 ];
 
-const books = [
-  "Software Architecture in Practice (SEI Series in Software Engineering) 3rd Edition (Len Bass, Paul Clements, Rick Kazman)",
-  "A Concise Introduction to Mathematical Logic 3rd Edition (Wolfgang Rautenberg)",
-];
+const books = ['Software Architecture in Practice (SEI Series in Software Engineering) 3rd Edition (Len Bass, Paul Clements, Rick Kazman)', 'A Concise Introduction to Mathematical Logic 3rd Edition (Wolfgang Rautenberg)'];
 
 const courses = [
   {
-    name: "The Modern GraphQL Bootcamp (with Node.js and Apollo) (Andrew Mead)",
-    link: "https://www.udemy.com/certificate/UC-d052a15d-2dd6-434c-b314-2d3e6fe09119/",
+    name: 'The Modern GraphQL Bootcamp (with Node.js and Apollo) (Andrew Mead)',
+    link: 'https://www.udemy.com/certificate/UC-d052a15d-2dd6-434c-b314-2d3e6fe09119/',
   },
   {
-    name: "Node JS: Advanced Concepts (Stephen Grider)",
-    link: "https://www.udemy.com/certificate/UC-b0cee370-75b2-4101-a5cd-c05845c69ca1/",
+    name: 'Node JS: Advanced Concepts (Stephen Grider)',
+    link: 'https://www.udemy.com/certificate/UC-b0cee370-75b2-4101-a5cd-c05845c69ca1/',
   },
   {
     name: "CS50: CS50's Introduction to Computer Science",
@@ -380,216 +381,142 @@ function App() {
 
   return (
     <Root>
-      {!isLoaded && <Overlay /> }
+      {!isLoaded && <Overlay />}
       <AppContainer>
         <Header className="header">
           <H1Header>RUSLAN PLASTUN</H1Header>
           <Avatar onLoad={() => setIsLoaded(true)} />
         </Header>
         <Main>
+          <QuoteHeader>I break things until they start working</QuoteHeader>
+          <QuoteHeader><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/ruslan-plastun/">#opentowork</a></QuoteHeader>
+          <Footer>
+            <FooterNonLastLink target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/ruslan-plastun/">
+              <LinkedInIcon className={styles.icon} />
+            </FooterNonLastLink>
+            <FooterNonLastLink target="_blank" rel="noopener noreferrer" href="https://github.com/ZaharZagrava">
+              <GithubIcon className={styles.icon} />
+            </FooterNonLastLink>
+            <FooterNonLastLink target="_blank" rel="noopener noreferrer" href="https://stackoverflow.com/users/7735423/zahar-zagrava?tab=profile">
+              <img src={StackoverflowImage} alt="Stackoverflow" className={styles.stackoverflow_icon} />
+            </FooterNonLastLink>
+            <FooterNonLastLink target="_blank" rel="noopener noreferrer" href="https://twitter.com/zaharzagrava">
+              <TwitterIcon className={styles.icon} />
+            </FooterNonLastLink>
+            <FooterNonLastLink target="_blank" rel="noopener noreferrer" href="mailto: zaharzagrava@gmail.com">
+              <EmailIcon className={styles.icon} />
+            </FooterNonLastLink>
+            <FooterNonLastLink target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/zahar.zagrava.1">
+              <FacebookIcon className={styles.icon} />
+            </FooterNonLastLink>
+          </Footer>
           <H2Header>Experience</H2Header>
           <List>
             <ListItem>
-              Full Stack Developer -{" "}
-              {`${getYearDiff(positions.fullStackDev, DateTime.now())}`}
+              Tech Lead at{' '}
+              <a target="_blank" rel="noopener noreferrer" href={'https://www.linkedin.com/company/milestep/'}>
+                MileStep
+              </a>{' '}
+              - {`${getYearDiff(positions.techLead, DateTime.now())}`} <FromToDate>({`${positions.techLead.toFormat('MM/yyyy')}`} - Now)</FromToDate>
             </ListItem>
             <ListItem>
-              Tech Lead - {`${getYearDiff(positions.techLead, DateTime.now())}`}
+              Full Stack Developer at{' '}
+              <a target="_blank" rel="noopener noreferrer" href={'https://www.linkedin.com/company/milestep/'}>
+                MileStep
+              </a>{' '}
+              - {`${getYearDiff(positions.fullStackDev, DateTime.now())}`} <FromToDate>({`${positions.fullStackDev.toFormat('MM/yyyy')}`} - Now)</FromToDate>
             </ListItem>
           </List>
           <H2Header>Projects</H2Header>
           <List>
-            {projects.map((project) => (
-              <ListItem key={project.name}>
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href={project.link}
-                >
-                  {project.name}
-                </a>{" "}
-                - {project.description}
-                {project.workingOn && " (currently working on)."}
-              </ListItem>
-            ))}
+            <ListItem key={projects[0].name}>
+              <a target="_blank" rel="noopener noreferrer" href={projects[0].link}>
+                {projects[0].name}
+              </a>{' '}
+              - {projects[0].description}
+              <List>
+                <ListItem>Implemented GraphQL backend using Typescript, PostgreSQL, Node.js and express.</ListItem>
+                <ListItem>Created role-based access to different endpoints. For example, only admins can get a list of users, but everyone can get a list of service providers.</ListItem>
+                <ListItem>Deployed project on AWS using AWS Cloudformation complying with security requirements for deployed resources like AWS RDS and S3.</ListItem>
+                <ListItem>Created fully automated CI/CD pipeline using CircleCI.</ListItem>
+              </List>
+            </ListItem>
+            <ListItem key={projects[1].name}>
+              <a target="_blank" rel="noopener noreferrer" href={projects[1].link}>
+                {projects[1].name}
+              </a>{' '}
+              - {projects[1].description}
+              <List>
+                <ListItem>Refactored API codebase, increasing its maintainability, and preserving performance of the project.</ListItem>
+                <ListItem>Had experience in writing unit / integration tests for react / react-native using jest and react-testing-library.</ListItem>
+                <ListItem>Was responsible for code review, and for maintaining the quality of the existing codebase.</ListItem>
+              </List>
+            </ListItem>
           </List>
-          <H2Header>Languages</H2Header>
+          <H2Header>Programming Languages</H2Header>
           <List>
             <ListItem>
-              Typescript -{" "}
-              {`${getYearDiff(
-                exp.languages.typescript.professionally.from,
-                DateTime.now()
-              )}`}{" "}
-              professional experience,{" "}
-              {`${getYearDiff(
-                exp.languages.typescript.personally.from,
-                DateTime.now()
-              )}`}{" "}
-              total (main specialization)
+              Typescript - {`${getYearDiff(exp.languages.typescript.professionally.from, DateTime.now())}`} professional experience, {`${getYearDiff(exp.languages.typescript.personally.from, DateTime.now())}`} total (main specialization)
             </ListItem>
             <ListItem>
-              Javascript -{" "}
-              {`${getYearDiff(
-                exp.languages.javascript.professionally.from,
-                DateTime.now()
-              )}`}{" "}
-              professional experience,{" "}
-              {`${getYearDiff(
-                exp.languages.javascript.personally.from,
-                DateTime.now()
-              )}`}{" "}
-              total
+              Javascript - {`${getYearDiff(exp.languages.javascript.professionally.from, DateTime.now())}`} professional experience, {`${getYearDiff(exp.languages.javascript.personally.from, DateTime.now())}`} total
             </ListItem>
-            <ListItem>
-              C# -{" "}
-              {`${getYearDiff(
-                exp.languages.csharp.personally.from,
-                exp.languages.csharp.personally.to
-              )}`}{" "}
-              total
-            </ListItem>
+            <ListItem>C# - {`${getYearDiff(exp.languages.csharp.personally.from, exp.languages.csharp.personally.to)}`} total</ListItem>
           </List>
           <H2Header>Frameworks</H2Header>
           <List>
             <ListItem>
-              Node.js -{" "}
-              {`${getYearDiff(
-                exp.frameworks.nodejs.professionally.from,
-                DateTime.now()
-              )}`}{" "}
-              professional experience,{" "}
-              {`${getYearDiff(
-                exp.frameworks.nodejs.personally.from,
-                DateTime.now()
-              )}`}{" "}
-              total (it is a runtime, but acts as a framework as well)
+              Node.js - {`${getYearDiff(exp.frameworks.nodejs.professionally.from, DateTime.now())}`} professional experience, {`${getYearDiff(exp.frameworks.nodejs.personally.from, DateTime.now())}`} total (it is a runtime, but acts as a framework
+              as well)
             </ListItem>
             <ListItem>
-              React.js -{" "}
-              {`${getYearDiff(
-                exp.frameworks.react.professionally.from,
-                DateTime.now()
-              )}`}{" "}
-              professional experience,{" "}
-              {`${getYearDiff(
-                exp.frameworks.react.personally.from,
-                DateTime.now()
-              )}`}{" "}
-              total
+              React.js - {`${getYearDiff(exp.frameworks.react.professionally.from, DateTime.now())}`} professional experience, {`${getYearDiff(exp.frameworks.react.personally.from, DateTime.now())}`} total
             </ListItem>
           </List>
           <H2Header>Storage systems</H2Header>
           <List>
             <ListItem>
-              PostgreSQL -{" "}
-              {`${getYearDiff(
-                exp.storageSystems.postgresql.professionally.from,
-                DateTime.now()
-              )}`}{" "}
-              professional experience,{" "}
-              {`${getYearDiff(
-                exp.storageSystems.postgresql.personally.from,
-                DateTime.now()
-              )}`}{" "}
-              total
+              PostgreSQL - {`${getYearDiff(exp.storageSystems.postgresql.professionally.from, DateTime.now())}`} professional experience, {`${getYearDiff(exp.storageSystems.postgresql.personally.from, DateTime.now())}`} total
             </ListItem>
             <ListItem>
-              Redis -{" "}
-              {`${getYearDiff(
-                exp.storageSystems.redis.professionally.from,
-                DateTime.now()
-              )}`}{" "}
-              professional experience,{" "}
-              {`${getYearDiff(
-                exp.storageSystems.redis.personally.from,
-                DateTime.now()
-              )}`}{" "}
-              total
+              Redis - {`${getYearDiff(exp.storageSystems.redis.professionally.from, DateTime.now())}`} professional experience, {`${getYearDiff(exp.storageSystems.redis.personally.from, DateTime.now())}`} total
             </ListItem>
           </List>
           <H2Header>APIs</H2Header>
           <List>
             <ListItem>
-              GraphQL -{" "}
-              {`${getYearDiff(
-                exp.apis.graphql.professionally.from,
-                DateTime.now()
-              )}`}{" "}
-              professional experience,{" "}
-              {`${getYearDiff(
-                exp.apis.graphql.personally.from,
-                DateTime.now()
-              )}`}{" "}
-              total
+              GraphQL - {`${getYearDiff(exp.apis.graphql.professionally.from, DateTime.now())}`} professional experience, {`${getYearDiff(exp.apis.graphql.personally.from, DateTime.now())}`} total
             </ListItem>
-            <ListItem>
-              REST -{" "}
-              {`${getYearDiff(
-                exp.apis.rest.professionally.from,
-                DateTime.now()
-              )}`}{" "}
-              professional experience
-            </ListItem>
+            <ListItem>REST - {`${getYearDiff(exp.apis.rest.professionally.from, DateTime.now())}`} professional experience</ListItem>
           </List>
           <H2Header>Hosting platforms</H2Header>
           <List>
             <ListItem>
-              AWS -{" "}
-              {`${getYearDiff(
-                exp.hostingPlatforms.aws.professionally.from,
-                DateTime.now()
-              )}`}{" "}
-              professional experience,{" "}
-              {`${getYearDiff(
-                exp.hostingPlatforms.aws.personally.from,
-                DateTime.now()
-              )}`}{" "}
-              total
+              AWS - {`${getYearDiff(exp.hostingPlatforms.aws.professionally.from, DateTime.now())}`} professional experience, {`${getYearDiff(exp.hostingPlatforms.aws.personally.from, DateTime.now())}`} total
             </ListItem>
-            <ListItem>
-              Digital Ocean -{" "}
-              {`${getYearDiff(
-                exp.hostingPlatforms.digitalOcean.professionally.from,
-                DateTime.now()
-              )}`}{" "}
-              professional experience
-            </ListItem>
+            <ListItem>Digital Ocean - {`${getYearDiff(exp.hostingPlatforms.digitalOcean.professionally.from, DateTime.now())}`} professional experience</ListItem>
           </List>
-          <H2Header>Features</H2Header>
-          <List>
-            <ListItem>Implemented GraphQL server with Typescript, using type-graphql</ListItem>
-            <ListItem>Familiar with GraphQL potential performance problems (n+1 problem), and ways to fix them</ListItem>
-            <ListItem>Created scalable AWS infrastructure with AWS Cloudformation</ListItem>
-            <ListItem>Refactored api codebase of one of my projects, using <b>twice as little</b> code as was before (not only preserving but increasing maintainability, and preserving performance of the project)</ListItem>
-            <ListItem>Had professional experience communicating directly with Enligsh-speaking clients, sometimes helping them with product design</ListItem>
-            <ListItem>Had experience in writing unit / integration tests for react / react-native using jest, react-testing-library</ListItem>
-          </List>
-          <H2Header>Other technologies</H2Header>
-          <List>
-            <ListItem>Elasticsearch</ListItem>
-            <ListItem>Storybook (only personal experience)</ListItem>
-            <ListItem>redux, redux-saga, immer, @reduxjs/toolkit</ListItem>
-            <ListItem>type-graphql</ListItem>
-            <ListItem>knex</ListItem>
-            <ListItem>styled-components (only personal experience)</ListItem>
-            <ListItem>luxon, moment, lodash</ListItem>
-            <ListItem>yup</ListItem>
-            <ListItem>formik</ListItem>
-            <ListItem>axios, got, superagent</ListItem>
-            <ListItem>prettier, eslint, typedoc</ListItem>
-            <ListItem>SASS</ListItem>
-            <ListItem>Material UI</ListItem>
-            <ListItem>Bootstrap</ListItem>
-            <ListItem>HTML (duh...)</ListItem>
-          </List>
+          <H2Header>Skills</H2Header>
+          <FlexList>
+            <FlexListItem>Elasticsearch</FlexListItem>
+            <FlexListItem>Storybook</FlexListItem>
+            <FlexListItem>Docker, docker-compose</FlexListItem>
+            <FlexListItem>knex, sequelize, typeorm</FlexListItem>
+            <FlexListItem>type-graphql</FlexListItem>
+            <FlexListItem>redux, redux-saga, immer, @reduxjs/toolkit</FlexListItem>
+            <FlexListItem>styled-components, SASS</FlexListItem>
+            <FlexListItem>luxon, moment, lodash</FlexListItem>
+            <FlexListItem>formik, yup</FlexListItem>
+            <FlexListItem>axios, got, superagent</FlexListItem>
+            <FlexListItem>prettier, eslint, typedoc</FlexListItem>
+            <FlexListItem>Material UI</FlexListItem>
+          </FlexList>
           <H2Header>Languages</H2Header>
           <List>
             <ListItem>English - B2</ListItem>
-                <List>
-                  <ListItem>B2 level was tested and verified, it's not just my estimate</ListItem>
-                  <ListItem>Had professional exprience of interacting with english-speaking clients</ListItem>
-                </List>
+            <List>
+              <ListItem>had professional exprience of interacting with english-speaking clients</ListItem>
+            </List>
             <ListItem>Ukrainian - native</ListItem>
             <ListItem>Russian - proficient</ListItem>
           </List>
@@ -602,105 +529,45 @@ function App() {
           <H2Header>Courses</H2Header>
           <List>
             <ListItem>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href={courses[0].link}
-              >
+              <a target="_blank" rel="noopener noreferrer" href={courses[0].link}>
                 {courses[0].name}
               </a>
             </ListItem>
             <ListItem>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href={courses[1].link}
-              >
+              <a target="_blank" rel="noopener noreferrer" href={courses[1].link}>
                 {courses[1].name}
               </a>
             </ListItem>
             <ListItem>
-              <LinkButton onClick={() => setisCS50Shown(true)}>
-                {courses[2].name}
-              </LinkButton>
+              <LinkButton onClick={() => setisCS50Shown(true)}>{courses[2].name}</LinkButton>
             </ListItem>
           </List>
-          <H2Header>Work rules</H2Header>
+          <H2Header>Work</H2Header>
           <List>
-            <ListItem>Start working at 8 AM</ListItem>
-            <ListItem>Use a stand-up desk</ListItem>
-            <ListItem>Use pomodoro (50 min of working / 6 minutes of relax)</ListItem>
-            <ListItem>Work in a quiet environment with no distractions</ListItem>
+            <ListItem>When I review a PR or write code myself, I make sure to balance changes to all attributes of the codebase (e.g. maintainability, interoperability, performance), and that the best solution possible was chosen for the task</ListItem>
+            <ListItem>I've been coding since I was 14 years old using C++, then C#, then JavaScript, and I’ve seen many architectures, design principles, and best practices used in software engineering, so I have a solid baggage of tricks to use in my day-to-day work</ListItem>
+            <ListItem>I am a quick and eager learner, so "full-stack new stuff learner" is basically my second job title :)</ListItem>
           </List>
+          <FlexList>
+            <FlexListItem>Use a stand-up desk</FlexListItem>
+            <FlexListItem>Use pomodoro (50 min. work / 6 min. rest)</FlexListItem>
+            <FlexListItem>Quiet environment</FlexListItem>
+            <FlexListItem>Plan ahead before getting to code</FlexListItem>
+          </FlexList>
           <H2Header>Education</H2Header>
-          <Paragraph>
-            State Higher Educational Institution Banking University Cherkasy Institute (2018 - 2022)
-          </Paragraph>
-          <H2Header>About Me</H2Header>
-          <Paragraph>
-            I like rambling around the city to
-            relax and reset after work, exploring new places;
-            watching movies, tv shows (Love, death &amp; robots, Game of Thrones,
-            Stranger Things), and... yeah, that's pretty much it :)
-          </Paragraph>
+          <Paragraph>State Higher Educational Institution Banking University Cherkasy Institute <FromToDate></FromToDate> (2018 - 2022)</Paragraph>
+          <H2Header>Personal</H2Header>
+          <Paragraph>I like rambling around the city to relax and reset after work, exploring new places; watching movies, tv shows (Love, death &amp; robots, Game of Thrones, Stranger Things), and... yeah, that's pretty much it :)</Paragraph>
           <Hr />
-          <Footer>
-            <FooterNonLastLink
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://www.linkedin.com/in/ruslan-plastun/"
-            >
-              <LinkedInIcon className={styles.icon} />
-            </FooterNonLastLink>
-            <FooterNonLastLink
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://github.com/ZaharZagrava"
-            >
-              <GithubIcon className={styles.icon} />
-            </FooterNonLastLink>
-            <FooterNonLastLink
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://stackoverflow.com/users/7735423/zahar-zagrava?tab=profile"
-            >
-              <img src={StackoverflowImage} alt="Stackoverflow" className={styles.stackoverflow_icon}  />
-            </FooterNonLastLink>
-            <FooterNonLastLink
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://twitter.com/zaharzagrava"
-            >
-              <TwitterIcon className={styles.icon} />
-            </FooterNonLastLink>
-            <FooterNonLastLink
-              target="_blank"
-              rel="noopener noreferrer"
-              href="mailto: zaharzagrava@gmail.com"
-            >
-              <EmailIcon className={styles.icon} />
-            </FooterNonLastLink>
-            <FooterNonLastLink
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://www.facebook.com/zahar.zagrava.1"
-            >
-              <FacebookIcon className={styles.icon} />
-            </FooterNonLastLink>
-          </Footer>
         </Main>
       </AppContainer>
       {isCS50Shown && (
         <FullScreenContainer onClick={() => setisCS50Shown(false)}>
-          <FullScreenImage
-            src={cs50certificate}
-            alt="CS50 Certificate"
-            onClick={(e) => e.stopPropagation()}
-          />
+          <FullScreenImage src={cs50certificate} alt="CS50 Certificate" onClick={(e) => e.stopPropagation()} />
         </FullScreenContainer>
       )}
-    </Root>)
-
+    </Root>
+  );
 }
 
 export default App;
