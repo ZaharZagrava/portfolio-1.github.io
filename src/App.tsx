@@ -132,7 +132,7 @@ const QuoteHeader = styled.p`
   font-size: 18px;
 
   text-align: center;
-`
+`;
 
 const ListItem = styled.li``;
 
@@ -154,13 +154,13 @@ const Hr = styled.hr`
   margin: 32px 0px 20px 0px;
 `;
 
-const Footer = styled.main`
+const Socials = styled.main`
   display: flex;
   align-items: center;
   justify-content: center;
 `;
 
-const FooterNonLastLink = styled.a`
+const SocialsNonLastLink = styled.a`
   margin-right: 10px;
 `;
 
@@ -182,8 +182,21 @@ const FlexListItem = styled.div`
 `;
 
 const positions = {
-  fullStackDev: DateTime.now().set({ year: 2020, month: 10 }),
-  techLead: DateTime.now().set({ year: 2021, month: 4 }),
+  milestep: {
+    fullStackDev: {
+      from: DateTime.now().set({ year: 2020, month: 10 }),
+      to: DateTime.now().set({ year: 2021, month: 7 }),
+    },
+    techLead: {
+      from: DateTime.now().set({ year: 2021, month: 4 }),
+      to: DateTime.now().set({ year: 2021, month: 7 }),
+    },
+  },
+  titaniumTechnologies: {
+    backendDev: {
+      from: DateTime.now().set({ year: 2021, month: 7, day: 6 }),
+    },
+  },
 };
 
 const exp = {
@@ -355,7 +368,7 @@ const projects = [
     name: 'Meetmeinthebar',
     link: 'https://meetmeinthe.bar',
     description: 'as a full stack developer, recently as a tech lead as well',
-  }
+  },
 ];
 
 const books = ['Software Architecture in Practice (SEI Series in Software Engineering) 3rd Edition (Len Bass, Paul Clements, Rick Kazman)', 'A Concise Introduction to Mathematical Logic 3rd Edition (Wolfgang Rautenberg)'];
@@ -389,42 +402,57 @@ function App() {
         </Header>
         <Main>
           <QuoteHeader>I break things until they start working</QuoteHeader>
-          <QuoteHeader><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/ruslan-plastun/">#opentowork</a></QuoteHeader>
-          <Footer>
-            <FooterNonLastLink target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/ruslan-plastun/">
+          <Socials>
+            <SocialsNonLastLink target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/ruslan-plastun/">
               <LinkedInIcon className={styles.icon} />
-            </FooterNonLastLink>
-            <FooterNonLastLink target="_blank" rel="noopener noreferrer" href="https://github.com/ZaharZagrava">
+            </SocialsNonLastLink>
+            <SocialsNonLastLink target="_blank" rel="noopener noreferrer" href="https://github.com/ZaharZagrava">
               <GithubIcon className={styles.icon} />
-            </FooterNonLastLink>
-            <FooterNonLastLink target="_blank" rel="noopener noreferrer" href="https://stackoverflow.com/users/7735423/zahar-zagrava?tab=profile">
+            </SocialsNonLastLink>
+            <SocialsNonLastLink target="_blank" rel="noopener noreferrer" href="https://stackoverflow.com/users/7735423/zahar-zagrava?tab=profile">
               <img src={StackoverflowImage} alt="Stackoverflow" className={styles.stackoverflow_icon} />
-            </FooterNonLastLink>
-            <FooterNonLastLink target="_blank" rel="noopener noreferrer" href="https://twitter.com/zaharzagrava">
+            </SocialsNonLastLink>
+            <SocialsNonLastLink target="_blank" rel="noopener noreferrer" href="https://twitter.com/zaharzagrava">
               <TwitterIcon className={styles.icon} />
-            </FooterNonLastLink>
-            <FooterNonLastLink target="_blank" rel="noopener noreferrer" href="mailto: zaharzagrava@gmail.com">
+            </SocialsNonLastLink>
+            <SocialsNonLastLink target="_blank" rel="noopener noreferrer" href="mailto: zaharzagrava@gmail.com">
               <EmailIcon className={styles.icon} />
-            </FooterNonLastLink>
-            <FooterNonLastLink target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/zahar.zagrava.1">
+            </SocialsNonLastLink>
+            <SocialsNonLastLink target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/zahar.zagrava.1">
               <FacebookIcon className={styles.icon} />
-            </FooterNonLastLink>
-          </Footer>
+            </SocialsNonLastLink>
+          </Socials>
           <H2Header>Experience</H2Header>
           <List>
+            <ListItem>
+              Back End Developer at{' '}
+              <a target="_blank" rel="noopener noreferrer" href={'https://www.linkedin.com/company/titaniumtechnologiesgroup/mycompany/'}>
+                Titanium Technologies
+              </a>{' '}
+              - {`${getYearDiff(positions.titaniumTechnologies.backendDev.from, DateTime.now())}`}{' '}
+              <FromToDate>
+                ({`${positions.titaniumTechnologies.backendDev.from.toFormat('MM/yyyy')}`} - Now)
+              </FromToDate>
+            </ListItem>
             <ListItem>
               Tech Lead at{' '}
               <a target="_blank" rel="noopener noreferrer" href={'https://www.linkedin.com/company/milestep/'}>
                 MileStep
               </a>{' '}
-              - {`${getYearDiff(positions.techLead, DateTime.now())}`} <FromToDate>({`${positions.techLead.toFormat('MM/yyyy')}`} - Now)</FromToDate>
+              - {`${getYearDiff(positions.milestep.techLead.from, positions.milestep.techLead.to)}`}{' '}
+              <FromToDate>
+                ({`${positions.milestep.techLead.from.toFormat('MM/yyyy')}`} - {`${positions.milestep.techLead.to.toFormat('MM/yyyy')}`})
+              </FromToDate>
             </ListItem>
             <ListItem>
               Full Stack Developer at{' '}
               <a target="_blank" rel="noopener noreferrer" href={'https://www.linkedin.com/company/milestep/'}>
                 MileStep
               </a>{' '}
-              - {`${getYearDiff(positions.fullStackDev, DateTime.now())}`} <FromToDate>({`${positions.fullStackDev.toFormat('MM/yyyy')}`} - Now)</FromToDate>
+              - {`${getYearDiff(positions.milestep.fullStackDev.from, positions.milestep.fullStackDev.to)}`}{' '}
+              <FromToDate>
+                ({`${positions.milestep.fullStackDev.from.toFormat('MM/yyyy')}`} - {`${positions.milestep.fullStackDev.to.toFormat('MM/yyyy')}`})
+              </FromToDate>
             </ListItem>
           </List>
           <H2Header>Projects</H2Header>
@@ -544,8 +572,13 @@ function App() {
           </List>
           <H2Header>Work</H2Header>
           <List>
-            <ListItem>When I review a PR or write code myself, I make sure to balance changes to all attributes of the codebase (e.g. maintainability, interoperability, performance), and that the best solution possible was chosen for the task</ListItem>
-            <ListItem>I've been coding since I was 14 years old using C++, then C#, then JavaScript, and I’ve seen many architectures, design principles, and best practices used in software engineering, so I have a solid baggage of tricks to use in my day-to-day work</ListItem>
+            <ListItem>
+              When I review a PR or write code myself, I make sure to balance changes to all attributes of the codebase (e.g. maintainability, interoperability, performance), and that the best solution possible was chosen for the task
+            </ListItem>
+            <ListItem>
+              I've been coding since I was 14 years old using C++, then C#, then JavaScript, and I’ve seen many architectures, design principles, and best practices used in software engineering, so I have a solid baggage of tricks to use in my
+              day-to-day work
+            </ListItem>
             <ListItem>I am a quick and eager learner, so "full-stack new stuff learner" is basically my second job title :)</ListItem>
           </List>
           <FlexList>
@@ -555,7 +588,9 @@ function App() {
             <FlexListItem>Plan ahead before getting to code</FlexListItem>
           </FlexList>
           <H2Header>Education</H2Header>
-          <Paragraph>State Higher Educational Institution Banking University Cherkasy Institute <FromToDate></FromToDate> (2018 - 2022)</Paragraph>
+          <Paragraph>
+            State Higher Educational Institution Banking University Cherkasy Institute <FromToDate></FromToDate> (2018 - 2022)
+          </Paragraph>
           <H2Header>Personal</H2Header>
           <Paragraph>I like rambling around the city to relax and reset after work, exploring new places; watching movies, tv shows (Love, death &amp; robots, Game of Thrones, Stranger Things), and... yeah, that's pretty much it :)</Paragraph>
           <Hr />
