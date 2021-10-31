@@ -126,6 +126,12 @@ const H2Header = styled.h2`
   font-size: 24px;
 `;
 
+const H2HeaderCenter = styled.h2`
+  font-weight: 300;
+  font-size: 24px;
+  text-align: center;
+`;
+
 const QuoteHeader = styled.p`
   font-style: italic;
   font-weight: 300;
@@ -422,108 +428,11 @@ function App() {
               <FacebookIcon className={styles.icon} />
             </SocialsNonLastLink>
           </Socials>
-          <H2Header>Experience</H2Header>
-          <List>
-            <ListItem>
-              Back End Developer at{' '}
-              <a target="_blank" rel="noopener noreferrer" href={'https://www.linkedin.com/company/titaniumtechnologiesgroup/mycompany/'}>
-                Titanium Technologies
-              </a>{' '}
-              - {`${getYearDiff(positions.titaniumTechnologies.backendDev.from, DateTime.now())}`}{' '}
-              <FromToDate>
-                ({`${positions.titaniumTechnologies.backendDev.from.toFormat('MM/yyyy')}`} - Now)
-              </FromToDate>
-            </ListItem>
-            <ListItem>
-              Tech Lead at{' '}
-              <a target="_blank" rel="noopener noreferrer" href={'https://www.linkedin.com/company/milestep/'}>
-                MileStep
-              </a>{' '}
-              - {`${getYearDiff(positions.milestep.techLead.from, positions.milestep.techLead.to)}`}{' '}
-              <FromToDate>
-                ({`${positions.milestep.techLead.from.toFormat('MM/yyyy')}`} - {`${positions.milestep.techLead.to.toFormat('MM/yyyy')}`})
-              </FromToDate>
-            </ListItem>
-            <ListItem>
-              Full Stack Developer at{' '}
-              <a target="_blank" rel="noopener noreferrer" href={'https://www.linkedin.com/company/milestep/'}>
-                MileStep
-              </a>{' '}
-              - {`${getYearDiff(positions.milestep.fullStackDev.from, positions.milestep.fullStackDev.to)}`}{' '}
-              <FromToDate>
-                ({`${positions.milestep.fullStackDev.from.toFormat('MM/yyyy')}`} - {`${positions.milestep.fullStackDev.to.toFormat('MM/yyyy')}`})
-              </FromToDate>
-            </ListItem>
-          </List>
-          <H2Header>Projects</H2Header>
-          <List>
-            <ListItem key={projects[0].name}>
-              <a target="_blank" rel="noopener noreferrer" href={projects[0].link}>
-                {projects[0].name}
-              </a>{' '}
-              - {projects[0].description}
-              <List>
-                <ListItem>Implemented GraphQL backend using Typescript, PostgreSQL, Node.js and express.</ListItem>
-                <ListItem>Created role-based access to different endpoints. For example, only admins can get a list of users, but everyone can get a list of service providers.</ListItem>
-                <ListItem>Deployed project on AWS using AWS Cloudformation complying with security requirements for deployed resources like AWS RDS and S3.</ListItem>
-                <ListItem>Created fully automated CI/CD pipeline using CircleCI.</ListItem>
-              </List>
-            </ListItem>
-            <ListItem key={projects[1].name}>
-              <a target="_blank" rel="noopener noreferrer" href={projects[1].link}>
-                {projects[1].name}
-              </a>{' '}
-              - {projects[1].description}
-              <List>
-                <ListItem>Refactored API codebase, increasing its maintainability, and preserving performance of the project.</ListItem>
-                <ListItem>Had experience in writing unit / integration tests for react / react-native using jest and react-testing-library.</ListItem>
-                <ListItem>Was responsible for code review, and for maintaining the quality of the existing codebase.</ListItem>
-              </List>
-            </ListItem>
-          </List>
-          <H2Header>Programming Languages</H2Header>
-          <List>
-            <ListItem>
-              Typescript - {`${getYearDiff(exp.languages.typescript.professionally.from, DateTime.now())}`} professional experience, {`${getYearDiff(exp.languages.typescript.personally.from, DateTime.now())}`} total (main specialization)
-            </ListItem>
-            <ListItem>
-              Javascript - {`${getYearDiff(exp.languages.javascript.professionally.from, DateTime.now())}`} professional experience, {`${getYearDiff(exp.languages.javascript.personally.from, DateTime.now())}`} total
-            </ListItem>
-            <ListItem>C# - {`${getYearDiff(exp.languages.csharp.personally.from, exp.languages.csharp.personally.to)}`} total</ListItem>
-          </List>
-          <H2Header>Frameworks</H2Header>
-          <List>
-            <ListItem>
-              Node.js - {`${getYearDiff(exp.frameworks.nodejs.professionally.from, DateTime.now())}`} professional experience, {`${getYearDiff(exp.frameworks.nodejs.personally.from, DateTime.now())}`} total (it is a runtime, but acts as a framework
-              as well)
-            </ListItem>
-            <ListItem>
-              React.js - {`${getYearDiff(exp.frameworks.react.professionally.from, DateTime.now())}`} professional experience, {`${getYearDiff(exp.frameworks.react.personally.from, DateTime.now())}`} total
-            </ListItem>
-          </List>
-          <H2Header>Storage systems</H2Header>
-          <List>
-            <ListItem>
-              PostgreSQL - {`${getYearDiff(exp.storageSystems.postgresql.professionally.from, DateTime.now())}`} professional experience, {`${getYearDiff(exp.storageSystems.postgresql.personally.from, DateTime.now())}`} total
-            </ListItem>
-            <ListItem>
-              Redis - {`${getYearDiff(exp.storageSystems.redis.professionally.from, DateTime.now())}`} professional experience, {`${getYearDiff(exp.storageSystems.redis.personally.from, DateTime.now())}`} total
-            </ListItem>
-          </List>
-          <H2Header>APIs</H2Header>
-          <List>
-            <ListItem>
-              GraphQL - {`${getYearDiff(exp.apis.graphql.professionally.from, DateTime.now())}`} professional experience, {`${getYearDiff(exp.apis.graphql.personally.from, DateTime.now())}`} total
-            </ListItem>
-            <ListItem>REST - {`${getYearDiff(exp.apis.rest.professionally.from, DateTime.now())}`} professional experience</ListItem>
-          </List>
-          <H2Header>Hosting platforms</H2Header>
-          <List>
-            <ListItem>
-              AWS - {`${getYearDiff(exp.hostingPlatforms.aws.professionally.from, DateTime.now())}`} professional experience, {`${getYearDiff(exp.hostingPlatforms.aws.personally.from, DateTime.now())}`} total
-            </ListItem>
-            <ListItem>Digital Ocean - {`${getYearDiff(exp.hostingPlatforms.digitalOcean.professionally.from, DateTime.now())}`} professional experience</ListItem>
-          </List>
+          <H2HeaderCenter>
+            <a target="_blank" rel="noopener noreferrer" href="https://techrez.io/resume/ruslan-plastun" style={{fontWeight: 'normal'}}>
+              Resume
+            </a>
+          </H2HeaderCenter>
           <H2Header>Skills</H2Header>
           <FlexList>
             <FlexListItem>Elasticsearch</FlexListItem>
